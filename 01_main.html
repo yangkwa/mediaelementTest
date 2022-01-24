@@ -1,0 +1,226 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<meta name=”format-detection” content="telephone=no, address=no, email=no" />
+<title></title>
+<link rel="stylesheet" href="../js/3rdparty/kendoui/styles/kendo.common.min.css" type="text/css"/>
+<link rel="stylesheet" href="../js/3rdparty/kendoui/styles/kendo.bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="../font/NanumGothic.css" />
+<link rel="stylesheet" type="text/css" href="../font/material-icons.css" />
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="../js/3rdparty/kendoui/js/kendo.all.min.js"></script>
+<script type="text/javascript" src="../js/design.js"></script>
+<script type="text/javascript" src="LPlayer/Scripts/LAB.min.js"></script>
+<script type="text/javascript" src="LPlayer/Scripts/bowser.min.js"></script>
+<script type="text/javascript" src="LPlayer/Scripts/raphael.min.js"></script>
+<script type="text/javascript" src="LPlayer/Scripts/raphaeltools.src.js"></script>
+<script type="text/javascript" src="LPlayer/Scripts/raphael.fitText.min.js"></script>
+<script type="text/javascript" src="LPlayer/contents.json"></script>
+<script type="text/javascript" src="https://content.jwplatform.com/libraries/hUKGIu7X.js"></script>
+<script>jwplayer.key="BURwMfek2blVpJ/zGuE2Zk3igJakiitjHnWETHAhEpo="</script>
+<script>$(document).ready(function() {
+		$LAB.script('LPlayer/LPlayer.js').wait(function() {
+			document.title = 'LPlayer';
+			initialize('Contents/명제의이해/contents.json', true);
+	});
+});</script>
+</head>
+<body>
+<div id="container">
+	<div class="inner">
+		<div class="main">
+			<div class="media">
+				<div id="media">
+					<!-- jw 플레이어 -->
+				</div>
+				<div class="toggle">
+					<button class="k_side"></button>
+					<button class="k_timeline"></button>
+				</div>
+			</div>
+			<div class="timeline">
+				<div id="timeline">
+					<!-- Timeline -->
+				</div>
+			</div>
+		</div>
+		<div class="side">
+			<div class="slide" id="slide">
+			</div>
+			<div class="lib">
+				<!-- 질문/외부자료(html) -->
+				<div class="comment" id="comment" style="display:none;">
+					<div class="writer">
+						<div class="inner">
+							<div class="img"><img src="../images/temp/img_profile_01.png" alt=""></div>
+							<div class="top">
+								<span class="name">안혜진</span>
+								<p class="intro">안녕하세요. 안혜진 입니다.</p>
+							</div>
+							<div class="info">
+								<span class="type orange">Graduate</span>
+								<span class="item"><i class="icc bubble yellow">댓글</i></span>
+							</div>
+							<a href="#" class="add">구독</a>
+						</div>
+					</div>
+					<div class="board">
+						<div class="cnt">
+							<div class="bar">
+								<ul>
+									<li>View <span class="count">1024</span></li>
+								</ul>
+								<a href="#" class="vote">16</a>
+							</div>
+							<div class="comm">
+								R을 활용한 빅데이터 분석 기초
+								<br>
+								데이터 분석 다각화를 통해 효율적으로 빅데이터를 분석할 수 있는 능력을 키울 수 있다.
+							</div>
+							<div class="enter">
+								<a href="#" class="c_btn d_gray">수정</a>
+								<a href="#" class="c_btn red">삭제</a>
+								<a href="#" class="c_btn blue">답변 등록</a>
+							</div>
+						</div>
+						<ul class="reply">
+							<li>
+								<div class="img">
+									<img src="../images/temp/img_profile_02.png" alt="">
+								</div>
+								<div class="top">
+									<span class="name">신예은</span>
+									<div class="add">
+										<span class="state orange">채택답변</span>
+										<a href="#" class="vote">16</a>
+									</div>
+								</div>
+								<div class="ct">
+									<p>한 번의 시행에서 사건 A가 일어날 확률이 p로 일정할 때, n번의 독립시행에서 사건 A가 일어나는 횟수를 X라고 보면 정확합니다</p>
+								</div>
+							</li>
+							<li>
+								<div class="img">
+									<img src="../images/temp/img_profile_03.png" alt="">
+								</div>
+								<div class="top">
+									<span class="name">김지현</span>
+									<div class="add">
+										<a href="#" class="state">답변채택</a>
+										<a href="#" class="vote">1</a>
+									</div>
+								</div>
+								<div class="ct">
+									<p>모집단이 아니라 표본집단인데 표기가 잘못된 것 같습니다.</p>
+								</div>
+							</li>
+							<li>
+								<div class="img">
+									<img src="../images/temp/img_profile_04.png" alt="">
+								</div>
+								<div class="top">
+									<span class="name">송인권</span>
+									<div class="add">
+										<a href="#" class="state">답변채택</a>
+										<a href="#" class="vote">2</a>
+									</div>
+								</div>
+								<div class="ct">
+									<p>해당 부분에 대한 자세한 설명은 동영상 후반에 추가되어 있습니다.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="bookmark" id="bookmark" style="display:none;">
+					<table class="list">
+						<colgroup>
+							<col width="50px">
+							<col>
+							<col width="130px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td class="time">01:10 - 01:20</td>
+								<td>
+									<button type="button" title="수정"><i class="icc sq set">수정</i></button>
+									<button type="button" title="삭제"><i class="icc red sq close">삭제</i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td class="time">02:20 - 02:30</td>
+								<td>
+									<button type="button" title="수정"><i class="icc sq set">수정</i></button>
+									<button type="button" title="삭제"><i class="icc red sq close">삭제</i></button>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="time">03:00 - 03:20</td>
+								<td>
+									<button type="button" title="수정"><i class="icc sq set">수정</i></button>
+									<button type="button" title="삭제"><i class="icc red sq close">삭제</i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="c_dialog" id="comment_write" style="display:none;">
+	<div class="mask"></div>
+	<div class="outer" style="width:480px;height:560px;"><!-- 고정(스크롤)처리시 여기에 width, height 삽입 -->
+		<div class="head my">
+			<div class="user">
+				<div class="frm">
+					<img src="../images/temp/img_profile_03.png" alt="">
+				</div>
+			</div>
+			<div class="top">
+				<span class="name">김지현(나)</span>
+			</div>
+			<a href="#" class="p_close">닫기</a>
+		</div>
+		<div class="ct">
+			<div class="comm_reg">
+				<div class="write">
+					<div class="inner">
+						<table>
+							<caption>작성하기</caption>
+							<tbody>
+								<tr>
+									<td>
+										<div class="link"><input type="text" class="wide"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<textarea id="editor" rows="" cols=""></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="b_box">
+					<a href="#" class="c_btn blue lg">등록</a>
+					<a href="#" class="c_btn gray lg">취소</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+jQuery(function($){
+	$("#editor").kendoEditor({});
+});
+</script>
+</body>
+</html>
