@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MediaelementJS</title>
+    <link rel="stylesheet" href="lxplayer/mediaelementplayer.min.css">
+    <link rel="stylesheet" href="lxplayer/dist/speed/speed.min.css">    
+    <script src="lxplayer/mediaelement-and-player.min.js"></script>
+    <script src="lxplayer/renderers/vimeo.min.js"></script>
+    <script src="lxplayer/renderers/youtube.min.js"></script>
+    <script src="lxplayer/lang/ko.js"></script>
+    <script src="lxplayer/lxplayer.js"></script>    
 </head>
 <body>
     <h1>MediaelementJS 테스트</h1>
     <script>
-        
+        lxpInitialize('lxplayer', true);
     </script>
+    <div>
+        <video id="lxplayer1" width="640" height="360" style="max-width:100%;" poster="http://www.mediaelementjs.com/images/big_buck_bunny.jpg" preload="none" controls playsinline webkit-playsinline>
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/BigBuckBunny.mp4" type="video/mp4">
+            <track srclang="en" kind="subtitles" src="mediaelement.vtt">
+            <track srclang="en" kind="chapters" src="chapters.vtt">
+        </video>
+    </div>
 </body>
 </html>
