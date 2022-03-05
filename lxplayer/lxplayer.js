@@ -22,6 +22,7 @@ function lxpInitialize(id) {
 						if (src !== null && src !== undefined) {
 							console.log('Source : ' + src);
 							console.log('Renderer : ' + media.renderername);
+							
 						}
 					});
 	
