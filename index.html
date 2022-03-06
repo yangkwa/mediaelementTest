@@ -3,21 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediaelementJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="lxplayer/mediaelementplayer.min.css">
-    <link rel="stylesheet" href="lxplayer/dist/speed/speed.min.css">    
-    <script src="lxplayer/mediaelement-and-player.min.js"></script>
-    <script src="lxplayer/renderers/vimeo.min.js"></script>
-    <script src="lxplayer/renderers/youtube.min.js"></script>
-    <script src="lxplayer/lang/ko.js"></script>
-    <script src="lxplayer/lxplayer.js"></script>    
 </head>
 <body>
     <h1>MediaelementJS 테스트</h1>
-    <script>
-        lxpInitialize('lxplayer', true);
-    </script>
     <div>
         <video id="lxplayer1" width="640" height="360" style="max-width:100%;" poster="http://www.mediaelementjs.com/images/big_buck_bunny.jpg" preload="none" controls playsinline webkit-playsinline>
             <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/BigBuckBunny.mp4" type="video/mp4">
@@ -25,5 +17,36 @@
             <track srclang="en" kind="chapters" src="chapters.vtt">
         </video>
     </div>
+    <br>
+    <p>
+        (1) 구간 진도율 : 동영상 전체 구간 중 플레이된 구간이 얼만큼 인지를 계산합니다. (동영상 길이 보다 클 수 없음)
+    </p>
+    <div>
+        <button id="progressButton" onclick="progressButton_click('time', false);">진도율(시간)</button>
+        <button id="progressButton" onclick="progressButton_click('rate', false);">진도율(비율)</button>
+    </div>
+    <br>
+    <br>
+    <p>
+        (2) 누적 진도율 : 동영상 전체 시간 대비 플레이된 시간이 얼만큼 인지를 계산합니다. (동영상 길이 보다 클 수 있음)
+    </p>
+    <div>
+        <button id="progressButton" onclick="progressButton_click('time', true);">진도율(시간)</button>
+        <button id="progressButton" onclick="progressButton_click('rate', true);">진도율(비율)</button>
+    </div>    
+
+    <script src="lxplayer/mediaelement-and-player.min.js"></script>
+    <script src="lxplayer/renderers/facebook.min.js"></script>
+    <script src="lxplayer/renderers/twitch.min.js"></script>    
+    <script src="lxplayer/renderers/vimeo.min.js"></script>
+    <script src="lxplayer/lang/ko.js"></script>
+    <script src="lxplayer/lxplayer.js"></script>            
+
+    <script>
+        lxpInitialize('lxplayer', true);
+        function progressButton_click(type, aaccumulated) {
+            alert('진도율 :' + lxpGetProgress(type, aaccumulated));
+        }
+    </script>
 </body>
 </html>

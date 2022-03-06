@@ -14,15 +14,40 @@ function lxpInitialize(id) {
 	
 		for (var i = 0; i < mediaElements.length; i++) {
 			new MediaElementPlayer(mediaElements[i], {
-				stretching: stretching,
-				pluginPath: '../lxplayer/dist',
+				stretching: 'auto',
+				pluginPath: 'lxplayer',
 				success: function (media) {
-					media.addEventListener('loadedmetadata', function () {
+
+					lxpData = [];
+					lxpCurrentTime = 0;
+
+					media.addEventListener('loadedmetadata', function (e) {
+
+						lxpDuration = media.duration;
+
+						for (var i = 0; i < lxpDuration; i++) {
+							lxpData.push({hitCount : 0});
+						}
+
 						var src = media.originalNode.getAttribute('src').replace('&amp;', '&');
 						if (src !== null && src !== undefined) {
 							console.log('Source : ' + src);
 							console.log('Renderer : ' + media.renderername);
 							
+						}
+					});
+
+					media.addEventListener('timeupdate', function (e) {
+						var currentTime = parseInt(media.currentTime); 
+						if (typeof lxpCurrentTime != 'undefined') {
+							if (currentTime == 0)
+								lxpData[0].hitCount++;
+
+							if (lxpCurrentTime != currentTime) {
+								lxpCurrentTime = currentTime;
+								lxpData[lxpCurrentTime].hitCount++;
+								console.log('currentTime : ' + lxpCurrentTime);
+							}						
 						}
 					});
 	
@@ -31,7 +56,26 @@ function lxpInitialize(id) {
 					});
 				}
 			});
-		}
+		} 
 	});
 };
+
+function lxpGetProgress(type, accumulated) {
+	var hitCount = 0, progress = 0;
+
+	lxpData.forEach(element => {
+		if (element.hitCount > 0) {
+			accumulated == true ? hitCount += element.hitCount : hitCount++;
+		}
+	});
+
+	if (type == 'time') {
+		progress = hitCount;
+	}
+	else if (type == 'rate') {
+		lxpData.length > 0 ? progress = (hitCount / lxpData.length).toFixed(2) : progress = 0;;
+	}
+
+	return progress;
+}
 

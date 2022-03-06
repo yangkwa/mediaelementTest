@@ -3,20 +3,8 @@
         {
             "name": "Launch Microsoft Edge and open the Edge DevTools",
             "request": "launch",
-            "type": "vscode-edge-devtools.debug",
+            "type": "pwa-msedge",
             "file": "${workspaceFolder}/index.html"
-        },
-        {
-            "type": "pwa-msedge",
-            "name": "http://lxplayer",
-            "request": "launch",
-            "url": "http://lxplayer"
-        },
-        {
-            "type": "pwa-msedge",
-            "name": "index.html",
-            "request": "launch",
-            "url": "index.html"
         }
     ]
 }
